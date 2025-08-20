@@ -1,13 +1,14 @@
 import { useDispatch } from 'react-redux';
 import AddIcon from '../assets/plus-circle-filled-svgrepo-com.png';
 import { create } from '../redux/slices/todos';
+import type { RootDispatch } from '../redux/store';
 
 export default () => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<RootDispatch>();
 
     const storeTodo = (formData: FormData) => {
         const { title, done } = Object.fromEntries(formData);
-        dispatch(create({ title: title as string, done: !!done }))
+        dispatch(create({ title: title.toString(), done: !!done }))
     };
 
     return (

@@ -2,11 +2,11 @@ import TrashIcon from '../assets/trash-bin-2-svgrepo-com.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { markdone, remove } from '../redux/slices/todos';
 import type { TodoType } from '../types/todo';
-import type { RootState } from '../redux/store';
+import type { RootDispatch, RootState } from '../redux/store';
 
 export default () => {
     const todos = useSelector<RootState, TodoType[]>(state => state.todos);
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<RootDispatch>();
 
     return (
         <ul className='flex flex-col'>
