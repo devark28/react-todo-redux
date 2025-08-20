@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import AddIcon from '../assets/plus-circle-filled-svgrepo-com.png';
-import { create } from '../redux/store';
+import { create } from '../redux/slices/todos';
 
 export default () => {
     const dispatch = useDispatch();

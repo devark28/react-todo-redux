@@ -22,6 +22,8 @@ const todosSlice = createSlice({
             return state.filter(td => td.id != action.payload)
         }
     }
-})
+});
 
 export default todosSlice;
+
+export const {create, markdone, remove} = todosSlice.actions;
